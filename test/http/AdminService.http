@@ -1,0 +1,187 @@
+@server=http://localhost:4004
+@username=alice
+@password=
+
+
+### Customers
+# @name Customers_GET
+GET {{server}}/odata/v4/admin/Customers
+Authorization: Basic {{username}}:{{password}}
+
+
+### Customers
+# @name Customers_POST
+POST {{server}}/odata/v4/admin/Customers
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "Customers-18242790",
+  "firstName": "firstName-18242790",
+  "lastName": "lastName-18242790",
+  "email": "email-18242790",
+  "phone": "phone-18242790",
+  
+  "addresses": [
+    {
+      "ID": "20356418-e4d7-453f-aee6-346aa11babdb",
+      "city": "city-20356418",
+      "postCode": "postCode-20356418",
+      "streetAddress": "streetAddress-20356418",
+      "createdAt": "2007-05-16T00:00:00.000Z",
+      "createdBy": "createdBy.c4b42@example.net",
+      "modifiedAt": "2001-12-04T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.c4b42@example.net"
+    },
+    {
+      "ID": "20356419-7abb-4f37-85d2-6a39a6880be4",
+      "city": "city-20356419",
+      "postCode": "postCode-20356419",
+      "streetAddress": "streetAddress-20356419",
+      "createdAt": "2003-04-20T00:00:00.000Z",
+      "createdBy": "createdBy.c4b43@example.com",
+      "modifiedAt": "2008-06-04T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.c4b43@example.org"
+    }
+  ]
+}
+
+
+### Customers
+# @name Customers_PATCH
+PATCH {{server}}/odata/v4/admin/Customers/'Customers-18242790'
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "Customers-18242790",
+  "firstName": "firstName-18242790",
+  "lastName": "lastName-18242790",
+  "email": "email-18242790",
+  "phone": "phone-18242790",
+  
+  "addresses": [
+    {
+      "ID": "20356418-e4d7-453f-aee6-346aa11babdb",
+      "city": "city-20356418",
+      "postCode": "postCode-20356418",
+      "streetAddress": "streetAddress-20356418",
+      "createdAt": "2007-05-16T00:00:00.000Z",
+      "createdBy": "createdBy.c4b42@example.net",
+      "modifiedAt": "2001-12-04T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.c4b42@example.net"
+    },
+    {
+      "ID": "20356419-7abb-4f37-85d2-6a39a6880be4",
+      "city": "city-20356419",
+      "postCode": "postCode-20356419",
+      "streetAddress": "streetAddress-20356419",
+      "createdAt": "2003-04-20T00:00:00.000Z",
+      "createdBy": "createdBy.c4b43@example.com",
+      "modifiedAt": "2008-06-04T00:00:00.000Z",
+      "modifiedBy": "modifiedBy.c4b43@example.org"
+    }
+  ]
+}
+
+
+### Customers
+# @name Customers_DELETE
+DELETE {{server}}/odata/v4/admin/Customers/'Customers-18242790'
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### Incidents
+# @name Incidents_GET
+GET {{server}}/odata/v4/admin/Incidents
+Authorization: Basic {{username}}:{{password}}
+
+
+### Incidents
+# @name Incidents_POST
+POST {{server}}/odata/v4/admin/Incidents
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "12363593-bac2-4a10-bae1-62562c1dab0f",
+  "customer": {
+    "ID": "Customers-18242790"
+  },
+  "title": "title-12363593",
+  "urgency": {
+    "code": "H"
+  },
+  "status": {
+    "code": "C"
+  },
+  "conversation": [
+    {
+      "ID": "27429682-e8db-48a7-bb3e-a13030956d21",
+      "timestamp": "2017-10-25T00:00:00.000Z",
+      "author": "author.gbwvm@example.net",
+      "message": "message-27429682"
+    },
+    {
+      "ID": "27429683-6589-48c7-ab56-9e8eec093b09",
+      "timestamp": "2021-10-06T00:00:00.000Z",
+      "author": "author.gbwvn@example.net",
+      "message": "message-27429683"
+    }
+  ]
+}
+
+
+### Incidents
+# @name Incidents_PATCH
+PATCH {{server}}/odata/v4/admin/Incidents/12363593-bac2-4a10-bae1-62562c1dab0f
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+{
+  "ID": "12363593-bac2-4a10-bae1-62562c1dab0f",
+  "customer": {
+    "ID": "Customers-18242790"
+  },
+  "title": "title-12363593",
+  "urgency": {
+    "code": "H"
+  },
+  "status": {
+    "code": "C"
+  },
+  "conversation": [
+    {
+      "ID": "27429682-e8db-48a7-bb3e-a13030956d21",
+      "timestamp": "2017-10-25T00:00:00.000Z",
+      "author": "author.gbwvm@example.net",
+      "message": "message-27429682"
+    },
+    {
+      "ID": "27429683-6589-48c7-ab56-9e8eec093b09",
+      "timestamp": "2021-10-06T00:00:00.000Z",
+      "author": "author.gbwvn@example.net",
+      "message": "message-27429683"
+    }
+  ]
+}
+
+
+### Incidents
+# @name Incidents_DELETE
+DELETE {{server}}/odata/v4/admin/Incidents/12363593-bac2-4a10-bae1-62562c1dab0f
+Content-Type: application/json
+Authorization: Basic {{username}}:{{password}}
+
+
+### Urgency
+# @name Urgency_GET
+GET {{server}}/odata/v4/admin/Urgency
+Authorization: Basic {{username}}:{{password}}
+
+
+### Status
+# @name Status_GET
+GET {{server}}/odata/v4/admin/Status
+Authorization: Basic {{username}}:{{password}}
